@@ -15,8 +15,10 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { SideMenuItem } from "../../utils/SideMenuItem";
+import { SideMenuItem } from "../../components/SideMenuItem";
 import Rory from "../../assets/images/Rory.jpg";
+import amberadminIcon from "../../assets/images/amberadmin-icon.png";
+import amberadminName from "../../assets/images/amberadminname.png";
 
 const SideMenu = () => {
   const theme = useTheme();
@@ -28,7 +30,7 @@ const SideMenu = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[800]} !important`,
+          background: `${theme.palette.mode === "light" ? "#3676D1" : colors.primary[500]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -37,16 +39,15 @@ const SideMenu = () => {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#f6da54 !important",
         },
-        "& .pro-menu-item.active": {
+        /* "& .pro-menu-item.active": {
           color: "#6870fa !important",
-        },
+        }, */
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
-          {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
@@ -62,10 +63,24 @@ const SideMenu = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  Amber Admin
-                </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <img
+                  src={amberadminName}
+                  width={130}
+                  height={25}
+                  style={{
+                    cursor: "pointer",
+                    marginTop: "2px",
+                  }}
+                  alt="adminName"
+                />
+                <img
+                  alt="adminIcon"
+                  width="24px"
+                  height="16px"
+                  src={amberadminIcon}
+                  style={{ marginLeft: "2px" }}
+                />
+                <IconButton onClick={() => setIsCollapsed(!isCollapsed)} style={{ color: "#FFFFFF" }}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
@@ -80,19 +95,27 @@ const SideMenu = () => {
                   width="100px"
                   height="100px"
                   src={Rory}
-                  style={{ "object-fit": "cover", cursor: "pointer", borderRadius: "50%" }}
+                  style={{
+                    objectFit: "cover",
+                    cursor: "pointer",
+                    borderRadius: "50%",
+                  }}
                 />
               </Box>
               <Box textAlign="center">
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
+                  color={theme.palette.mode === "light" ? "#FFFFFF" : colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
                   Rory
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
+                <Typography
+                  variant="h5"
+                  color={"#f6da54"}
+                  sx={{ marginTop: "15px" }}
+                >
                   CEO of Super Important Things
                 </Typography>
               </Box>
@@ -107,14 +130,15 @@ const SideMenu = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Data
-            </Typography>
+            {!isCollapsed && (
+              <Typography
+                variant="h6"
+                color={"#FFFFFF"}
+                sx={{ fontWeight: "bold", m: "15px 0 5px 20px" }}
+              >
+                Data
+              </Typography>
+            )}
             <SideMenuItem
               title="Manage Team"
               to="/team"
@@ -136,14 +160,15 @@ const SideMenu = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Pages
-            </Typography>
+            {!isCollapsed && (
+              <Typography
+                variant="h6"
+                color={"#FFFFFF"}
+                sx={{ fontWeight: "bold", m: "15px 0 5px 20px" }}
+              >
+                Profile Info
+              </Typography>
+            )}
             <SideMenuItem
               title="Profile Form"
               to="/form"
@@ -165,14 +190,15 @@ const SideMenu = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Charts
-            </Typography>
+            {!isCollapsed && (
+              <Typography
+                variant="h6"
+                color={"#FFFFFF"}
+                sx={{ fontWeight: "bold", m: "15px 0 5px 20px" }}
+              >
+                Charts
+              </Typography>
+            )}
             <SideMenuItem
               title="Bar Chart"
               to="/bar"

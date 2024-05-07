@@ -1,4 +1,4 @@
-import { colorTokens } from "../theme";
+import { colorTokens } from "../themes";
 
 export const mockDataTeam = [
   {

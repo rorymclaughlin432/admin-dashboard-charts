@@ -10,7 +10,7 @@ export const SideMenuItem = ({ title, to, icon, selected, setSelected }) => {
       <MenuItem
         active={selected === title}
         style={{
-          color: colors.grey[100],
+          color: theme.palette.mode === "light" ? "#FFFFFF" : colors.grey[100]
         }}
         onClick={() => setSelected(title)}
         icon={icon}

@@ -19,12 +19,12 @@ const NavBar = () => {
     <Box display="flex" justifyContent="space-between" p={2}>
       <Box
         display={"flex"}
-        backgroundColor={colors.primary[100]}
+        backgroundColor={colors.primary[900]}
         borderRadius={"3px"}
       >
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder={"Search"}>
           <SearchIcon />
-          <IconButton></IconButton>
+          <IconButton/>
         </InputBase>
       </Box>
       <Box>
@@ -39,7 +39,7 @@ const NavBar = () => {
         </IconButton>
         <IconButton
           onClick={() => {
-            colorMode();
+            colorMode.toggleColorMode();
           }}
         >
           {theme.palette.mode === "light" ? (
