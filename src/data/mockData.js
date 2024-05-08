@@ -595,689 +595,339 @@ export const mockLineData = [
   },
 ];
 
-export const mockGeographyData = [
+export const mockMapData1 = [
   {
-    id: "AFG",
-    value: 520600,
+    lo: "Clervaux",
+    lat: 50.05508,
+    lon: 6.02938,
+    keyword: "Music School",
+    n2: "Clervaux"
   },
   {
-    id: "AGO",
-    value: 949905,
+    lo: "Differdange",
+    lat: 49.52082,
+    lon: 5.88789,
+    keyword: "Music School",
+    n2: "Differdange"
   },
   {
-    id: "ALB",
-    value: 329910,
+    lo: "Dudelange",
+    lat: 49.47436,
+    lon: 6.08299,
+    keyword: "Music School",
+    n2: "Dudelange"
   },
   {
-    id: "ARE",
-    value: 675484,
+    lo: "Echternach",
+    lat: 49.81352,
+    lon: 6.42018,
+    keyword: "Music School",
+    n2: "Echternach"
   },
   {
-    id: "ARG",
-    value: 432239,
+    lo: "Grevenmacher",
+    lat: 49.68126,
+    lon: 6.44506,
+    keyword: "Music School",
+    n2: "Grevenmacher"
   },
   {
-    id: "ARM",
-    value: 288305,
+    lo: "Kaerjeng",
+    lat: 49.56913,
+    lon: 5.90619,
+    keyword: "Music School",
+    n2: "Kaerjeng"
   },
   {
-    id: "ATA",
-    value: 415648,
+    lo: "Petange",
+    lat: 49.55807,
+    lon: 5.87544,
+    keyword: "Music School",
+    n2: "Petange"
   },
   {
-    id: "ATF",
-    value: 665159,
+    lo: "Redange-Attert",
+    lat: 49.76485,
+    lon: 5.88852,
+    keyword: "Music School",
+    n2: "Redange-Attert"
   },
   {
-    id: "AUT",
-    value: 798526,
+    lo: "Niederanven",
+    lat: 49.6500320799999,
+    lon: 6.26210656799999,
+    keyword: "Music School",
+    n2: "Niederanven"
   },
   {
-    id: "AZE",
-    value: 481678,
+    lo: "Walferdange",
+    lat: 49.6566846599999,
+    lon: 6.138347785,
+    keyword: "Music School",
+    n2: "Walferdange"
   },
   {
-    id: "BDI",
-    value: 496457,
+    lo: "Bertrange",
+    lat: 49.60921,
+    lon: 6.05253,
+    keyword: "Music School",
+    n2: "Bertrange"
   },
   {
-    id: "BEL",
-    value: 252276,
-  },
-  {
-    id: "BEN",
-    value: 440315,
-  },
-  {
-    id: "BFA",
-    value: 343752,
-  },
-  {
-    id: "BGD",
-    value: 920203,
-  },
-  {
-    id: "BGR",
-    value: 261196,
-  },
-  {
-    id: "BHS",
-    value: 421551,
-  },
-  {
-    id: "BIH",
-    value: 974745,
-  },
-  {
-    id: "BLR",
-    value: 349288,
-  },
-  {
-    id: "BLZ",
-    value: 305983,
-  },
-  {
-    id: "BOL",
-    value: 430840,
-  },
-  {
-    id: "BRN",
-    value: 345666,
-  },
-  {
-    id: "BTN",
-    value: 649678,
-  },
-  {
-    id: "BWA",
-    value: 319392,
-  },
-  {
-    id: "CAF",
-    value: 722549,
-  },
-  {
-    id: "CAN",
-    value: 332843,
-  },
-  {
-    id: "CHE",
-    value: 122159,
-  },
-  {
-    id: "CHL",
-    value: 811736,
-  },
-  {
-    id: "CHN",
-    value: 593604,
-  },
-  {
-    id: "CIV",
-    value: 143219,
-  },
-  {
-    id: "CMR",
-    value: 630627,
-  },
-  {
-    id: "COG",
-    value: 498556,
-  },
-  {
-    id: "COL",
-    value: 660527,
-  },
-  {
-    id: "CRI",
-    value: 60262,
-  },
-  {
-    id: "CUB",
-    value: 177870,
-  },
-  {
-    id: "-99",
-    value: 463208,
-  },
-  {
-    id: "CYP",
-    value: 945909,
-  },
-  {
-    id: "CZE",
-    value: 500109,
-  },
-  {
-    id: "DEU",
-    value: 63345,
-  },
-  {
-    id: "DJI",
-    value: 634523,
-  },
-  {
-    id: "DNK",
-    value: 731068,
-  },
-  {
-    id: "DOM",
-    value: 262538,
-  },
-  {
-    id: "DZA",
-    value: 760695,
-  },
-  {
-    id: "ECU",
-    value: 301263,
-  },
-  {
-    id: "EGY",
-    value: 148475,
-  },
-  {
-    id: "ERI",
-    value: 939504,
-  },
-  {
-    id: "ESP",
-    value: 706050,
-  },
-  {
-    id: "EST",
-    value: 977015,
-  },
-  {
-    id: "ETH",
-    value: 461734,
-  },
-  {
-    id: "FIN",
-    value: 22800,
-  },
-  {
-    id: "FJI",
-    value: 18985,
-  },
-  {
-    id: "FLK",
-    value: 64986,
-  },
-  {
-    id: "FRA",
-    value: 447457,
-  },
-  {
-    id: "GAB",
-    value: 669675,
-  },
-  {
-    id: "GBR",
-    value: 757120,
-  },
-  {
-    id: "GEO",
-    value: 158702,
-  },
-  {
-    id: "GHA",
-    value: 893180,
-  },
-  {
-    id: "GIN",
-    value: 877288,
-  },
-  {
-    id: "GMB",
-    value: 724530,
-  },
-  {
-    id: "GNB",
-    value: 387753,
-  },
-  {
-    id: "GNQ",
-    value: 706118,
-  },
-  {
-    id: "GRC",
-    value: 377796,
-  },
-  {
-    id: "GTM",
-    value: 66890,
-  },
-  {
-    id: "GUY",
-    value: 719300,
-  },
-  {
-    id: "HND",
-    value: 739590,
-  },
-  {
-    id: "HRV",
-    value: 929467,
-  },
-  {
-    id: "HTI",
-    value: 538961,
-  },
-  {
-    id: "HUN",
-    value: 146095,
-  },
-  {
-    id: "IDN",
-    value: 490681,
-  },
-  {
-    id: "IND",
-    value: 549818,
-  },
-  {
-    id: "IRL",
-    value: 630163,
-  },
-  {
-    id: "IRN",
-    value: 596921,
-  },
-  {
-    id: "IRQ",
-    value: 767023,
-  },
-  {
-    id: "ISL",
-    value: 478682,
-  },
-  {
-    id: "ISR",
-    value: 963688,
-  },
-  {
-    id: "ITA",
-    value: 393089,
-  },
-  {
-    id: "JAM",
-    value: 83173,
-  },
-  {
-    id: "JOR",
-    value: 52005,
-  },
-  {
-    id: "JPN",
-    value: 199174,
-  },
-  {
-    id: "KAZ",
-    value: 181424,
-  },
-  {
-    id: "KEN",
-    value: 60946,
-  },
-  {
-    id: "KGZ",
-    value: 432478,
-  },
-  {
-    id: "KHM",
-    value: 254461,
-  },
-  {
-    id: "OSA",
-    value: 942447,
-  },
-  {
-    id: "KWT",
-    value: 414413,
-  },
-  {
-    id: "LAO",
-    value: 448339,
-  },
-  {
-    id: "LBN",
-    value: 620090,
-  },
-  {
-    id: "LBR",
-    value: 435950,
-  },
-  {
-    id: "LBY",
-    value: 75091,
-  },
-  {
-    id: "LKA",
-    value: 595124,
-  },
-  {
-    id: "LSO",
-    value: 483524,
-  },
-  {
-    id: "LTU",
-    value: 867357,
-  },
-  {
-    id: "LUX",
-    value: 689172,
-  },
-  {
-    id: "LVA",
-    value: 742980,
-  },
-  {
-    id: "MAR",
-    value: 236538,
-  },
-  {
-    id: "MDA",
-    value: 926836,
-  },
-  {
-    id: "MDG",
-    value: 840840,
-  },
-  {
-    id: "MEX",
-    value: 353910,
-  },
-  {
-    id: "MKD",
-    value: 505842,
-  },
-  {
-    id: "MLI",
-    value: 286082,
-  },
-  {
-    id: "MMR",
-    value: 915544,
-  },
-  {
-    id: "MNE",
-    value: 609500,
-  },
-  {
-    id: "MNG",
-    value: 410428,
-  },
-  {
-    id: "MOZ",
-    value: 32868,
-  },
-  {
-    id: "MRT",
-    value: 375671,
-  },
-  {
-    id: "MWI",
-    value: 591935,
-  },
-  {
-    id: "MYS",
-    value: 991644,
-  },
-  {
-    id: "NAM",
-    value: 701897,
-  },
-  {
-    id: "NCL",
-    value: 144098,
-  },
-  {
-    id: "NER",
-    value: 312944,
-  },
-  {
-    id: "NGA",
-    value: 862877,
-  },
-  {
-    id: "NIC",
-    value: 90831,
-  },
-  {
-    id: "NLD",
-    value: 281879,
-  },
-  {
-    id: "NOR",
-    value: 224537,
-  },
-  {
-    id: "NPL",
-    value: 322331,
-  },
-  {
-    id: "NZL",
-    value: 86615,
-  },
-  {
-    id: "OMN",
-    value: 707881,
-  },
-  {
-    id: "PAK",
-    value: 158577,
-  },
-  {
-    id: "PAN",
-    value: 738579,
-  },
-  {
-    id: "PER",
-    value: 248751,
-  },
-  {
-    id: "PHL",
-    value: 557292,
-  },
-  {
-    id: "PNG",
-    value: 516874,
-  },
-  {
-    id: "POL",
-    value: 682137,
-  },
-  {
-    id: "PRI",
-    value: 957399,
-  },
-  {
-    id: "PRT",
-    value: 846430,
-  },
-  {
-    id: "PRY",
-    value: 720555,
-  },
-  {
-    id: "QAT",
-    value: 478726,
-  },
-  {
-    id: "ROU",
-    value: 259318,
-  },
-  {
-    id: "RUS",
-    value: 268735,
-  },
-  {
-    id: "RWA",
-    value: 136781,
-  },
-  {
-    id: "ESH",
-    value: 151957,
-  },
-  {
-    id: "SAU",
-    value: 111821,
-  },
-  {
-    id: "SDN",
-    value: 927112,
-  },
-  {
-    id: "SDS",
-    value: 966473,
-  },
-  {
-    id: "SEN",
-    value: 158085,
-  },
-  {
-    id: "SLB",
-    value: 178389,
-  },
-  {
-    id: "SLE",
-    value: 528433,
-  },
-  {
-    id: "SLV",
-    value: 353467,
-  },
-  {
-    id: "ABV",
-    value: 251,
-  },
-  {
-    id: "SOM",
-    value: 445243,
-  },
-  {
-    id: "SRB",
-    value: 202402,
-  },
-  {
-    id: "SUR",
-    value: 972121,
-  },
-  {
-    id: "SVK",
-    value: 319923,
-  },
-  {
-    id: "SVN",
-    value: 728766,
-  },
-  {
-    id: "SWZ",
-    value: 379669,
-  },
-  {
-    id: "SYR",
-    value: 16221,
-  },
-  {
-    id: "TCD",
-    value: 101273,
-  },
-  {
-    id: "TGO",
-    value: 498411,
-  },
-  {
-    id: "THA",
-    value: 506906,
-  },
-  {
-    id: "TJK",
-    value: 613093,
-  },
-  {
-    id: "TKM",
-    value: 327016,
-  },
-  {
-    id: "TLS",
-    value: 607972,
-  },
-  {
-    id: "TTO",
-    value: 936365,
-  },
-  {
-    id: "TUN",
-    value: 898416,
-  },
-  {
-    id: "TUR",
-    value: 237783,
-  },
-  {
-    id: "TWN",
-    value: 878213,
-  },
-  {
-    id: "TZA",
-    value: 442174,
-  },
-  {
-    id: "UGA",
-    value: 720710,
-  },
-  {
-    id: "UKR",
-    value: 74172,
-  },
-  {
-    id: "URY",
-    value: 753177,
-  },
-  {
-    id: "USA",
-    value: 658725,
-  },
-  {
-    id: "UZB",
-    value: 550313,
-  },
-  {
-    id: "VEN",
-    value: 707492,
-  },
-  {
-    id: "VNM",
-    value: 538907,
-  },
-  {
-    id: "VUT",
-    value: 650646,
-  },
-  {
-    id: "PSE",
-    value: 476078,
-  },
-  {
-    id: "YEM",
-    value: 957751,
-  },
-  {
-    id: "ZAF",
-    value: 836949,
-  },
-  {
-    id: "ZMB",
-    value: 714503,
-  },
-  {
-    id: "ZWE",
-    value: 405217,
-  },
-  {
-    id: "KOR",
-    value: 171135,
-  },
+    lo: "Wiltz",
+    lat: 49.96831,
+    lon: 5.93273,
+    keyword: "Music School",
+    n2: "Wiltz"
+  }
 ];
+
+
+export const mockMapData2 = 
+  [
+      {
+          "name": "Heinerscheid",
+          "lat": 50.09405539,
+          "lon": 6.09118546700001,
+          "keyword": "Music School (Dependency)",
+          "n2": "Clervaux"
+      },
+      {
+          "lo": "Hupperdange",
+          "lat": 50.0937996,
+          "lon": 6.06283071799999,
+          "keyword": "Music School (Dependency)",
+          "n2": "Clervaux"
+      },
+      {
+          "lo": "Lieler",
+          "lat": 50.1237705099999,
+          "lon": 6.111288849,
+          "keyword": "Music School (Dependency)",
+          "n2": "Clervaux"
+      },
+      {
+          "lo": "Munshausen",
+          "lat": 50.03361544,
+          "lon": 6.04153656499999,
+          "keyword": "Music School (Dependency)",
+          "n2": "Clervaux"
+      },
+      {
+          "lo": "Beaufort",
+          "lat": 49.8369224702153,
+          "lon": 6.29329554632867,
+          "keyword": "Music School (Dependency)",
+          "n2": "Beaufort"
+      },
+      {
+          "lo": "Hosingen",
+          "lat": 50.01712794,
+          "lon": 6.095269538,
+          "keyword": "Music School (Dependency)",
+          "n2": "Parc Hosingen"
+      },
+      {
+          "lo": "Wilwerdange",
+          "lat": 50.13931597,
+          "lon": 6.02029148899999,
+          "keyword": "Music School (Dependency)",
+          "n2": "Troisvierges"
+      },
+      {
+          "lo": "Binsfeld",
+          "lat": 50.11906469,
+          "lon": 6.03850251099998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Weiswampach"
+      },
+      {
+          "lo": "Weiswampach",
+          "lat": 50.1366235599999,
+          "lon": 6.077871926,
+          "keyword": "Music School (Dependency)",
+          "n2": "Weiswampach"
+      },
+      {
+          "lo": "Eschweiler",
+          "lat": 49.9976253999999,
+          "lon": 5.94464261799998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wiltz"
+      },
+      {
+          "lo": "Boevange",
+          "lat": 50.0458392,
+          "lon": 5.930235314,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wincrange"
+      },
+      {
+          "lo": "Hachiville",
+          "lat": 50.1060901899999,
+          "lon": 5.920684335,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wincrange"
+      },
+      {
+          "lo": "Wincrange",
+          "lat": 50.05354847,
+          "lon": 5.919501483,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wincrange"
+      },
+      {
+          "lo": "Bettembourg",
+          "lat": 49.5212219899999,
+          "lon": 6.105723092,
+          "keyword": "Music School (Dependency)",
+          "n2": "Bettembourg"
+      },
+      {
+          "lo": "Roeser",
+          "lat": 49.54258201,
+          "lon": 6.15014582799999,
+          "keyword": "Music School (Dependency)",
+          "n2": "Roeser"
+      },
+      {
+          "lo": "Weiler-la-Tour",
+          "lat": 49.5427034499999,
+          "lon": 6.20356275,
+          "keyword": "Music School (Dependency)",
+          "n2": "Weiler-la-Tour"
+      },
+      {
+          "lo": "Berdorf",
+          "lat": 49.8210656799741,
+          "lon": 6.35160257062658,
+          "keyword": "Music School (Dependency)",
+          "n2": "Berdorf"
+      },
+      {
+          "lo": "Consdorf",
+          "lat": 49.77916761,
+          "lon": 6.33990192699999,
+          "keyword": "Music School (Dependency)",
+          "n2": "Consdorf"
+      },
+      {
+          "lo": "Godbrange",
+          "lat": 49.73578875,
+          "lon": 6.233836317,
+          "keyword": "Music School (Dependency)",
+          "n2": "Junglinster"
+      },
+      {
+          "lo": "Junglinster",
+          "lat": 49.71066042,
+          "lon": 6.246488156,
+          "keyword": "Music School (Dependency)",
+          "n2": "Junglinster"
+      },
+      {
+          "lo": "Born",
+          "lat": 49.75568,
+          "lon": 6.50211,
+          "keyword": "Music School (Dependency)",
+          "n2": "Rosport-Mompach"
+      },
+      {
+          "lo": "Roodt-Syre",
+          "lat": 49.6661935899999,
+          "lon": 6.302502896,
+          "keyword": "Music School (Dependency)",
+          "n2": "Betzdorf"
+      },
+      {
+          "lo": "Canach",
+          "lat": 49.61077685,
+          "lon": 6.327877563,
+          "keyword": "Music School (Dependency)",
+          "n2": "Lenningen"
+      },
+      {
+          "lo": "Wasserbillig",
+          "lat": 49.7195239599999,
+          "lon": 6.493727692,
+          "keyword": "Music School (Dependency)",
+          "n2": "Mertert"
+      },
+      {
+          "lo": "Wellenstein",
+          "lat": 49.5241300099999,
+          "lon": 6.34617050399998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Schengen"
+      },
+      {
+          "lo": "Dreiborn",
+          "lat": 49.62062853,
+          "lon": 6.39385348799998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wormeldange"
+      },
+      {
+          "lo": "Wormeldange",
+          "lat": 49.61142298,
+          "lon": 6.38376196699998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wormeldange"
+      },
+      {
+          "lo": "Wormeldange-Haut",
+          "lat": 49.63134488,
+          "lon": 6.393617037,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wormeldange"
+      },
+      {
+          "lo": "Ermsdorf",
+          "lat": 49.9532309900337,
+          "lon": 6.07956337963779,
+          "keyword": "Music School (Dependency)",
+          "n2": "Esch-sur-Sûre"
+      },
+      {
+          "lo": "Leithum",
+          "lat": 49.85251999,
+          "lon": 6.10243399299995,
+          "keyword": "Music School (Dependency)",
+          "n2": "Goesdorf"
+      },
+      {
+          "lo": "Lullange",
+          "lat": 49.84417278,
+          "lon": 6.07958731399998,
+          "keyword": "Music School (Dependency)",
+          "n2": "Goesdorf"
+      },
+      {
+          "lo": "Bettendorf",
+          "lat": 49.8580387999999,
+          "lon": 6.05945128200001,
+          "keyword": "Music School (Dependency)",
+          "n2": "Goesdorf"
+      },
+      {
+          "lo": "Rambrouch",
+          "lat": 49.8676939999999,
+          "lon": 5.95859451799995,
+          "keyword": "Music School (Dependency)",
+          "n2": "Rambrouch"
+      },
+      {
+          "lo": "Redange-sur-Attert",
+          "lat": 49.7434435696223,
+          "lon": 5.88966142177526,
+          "keyword": "Music School (Dependency)",
+          "n2": "Redange"
+      },
+      {
+          "lo": "Wilwerwiltz",
+          "lat": 49.979535,
+          "lon": 6.098982,
+          "keyword": "Music School (Dependency)",
+          "n2": "Wiltz"
+      }
+  ];

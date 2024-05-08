@@ -221,8 +221,8 @@ const SideMenu = () => {
               setSelected={setSelected}
             />
             <SideMenuItem
-              title="Geography Chart"
-              to="/geography"
+              title="Map Chart"
+              to="/map"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

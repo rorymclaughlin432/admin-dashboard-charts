@@ -75,7 +75,8 @@ router.post("/submitcalendarEvent", async (req, res) => {
       id: uuidv4(),
       title: req.body.title,
       start: req.body.start,
-      end: req.body.end
+      end: req.body.end,
+      rule: req.body.rule,
     }
     let calendarEvents = db.collection("calendarInfo");
     let result = await calendarEvents.insertOne(calendarEventDetails);

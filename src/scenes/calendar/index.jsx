@@ -23,6 +23,60 @@ const Calendar = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const handleAddRecurringEvent = async (
+    eventName,
+    startDate,
+    endDate,
+    recurrence,
+    calendarApi
+  ) => {
+    let rrule;
+    switch (recurrence) {
+      case "weekly":
+        rrule = {
+          freq: "weekly",
+          interval: 1,
+        };
+        break;
+      case "biweekly":
+        rrule = {
+          freq: "weekly",
+          interval: 2,
+        };
+        break;
+      default:
+        rrule = null;
+    }
+
+    // Add the event with recurrence using FullCalendar's calendarApi
+    await calendarApi.addEvent({
+      title: eventName,
+      start: startDate,
+      end: endDate,
+      extendedProps: {
+        recurrenceRule: rrule, // Set the recurrence rule in the extendedProps
+      },
+    });
+
+    // Send the recurring event data to your backend for processing
+    await addRecurringEventToCalendar(eventName, startDate, endDate, recurrence);
+  };
+
+  const addRecurringEventToCalendar = async (
+    eventName,
+    startDate,
+    endDate,
+    recurrence
+  ) => {
+    // Send the event data to your backend for processing
+    await handleaddEventToCalendar({
+      title: eventName,
+      start: startDate,
+      end: endDate,
+      rule: recurrence,
+    });
+  };
+
   const handleaddEventToCalendar = async (values) => {
     try {
       const response = await axios.post(
@@ -102,9 +156,16 @@ const Calendar = () => {
       Swal.fire({
         title: "Add an Event",
         html: `
-    <input id="eventName" class="swal2-input" placeholder="Event Name" autofocus>
-    <input id="startDate" class="swal2-input" type="date" placeholder="Start Date">
-    <input id="endDate" class="swal2-input" type="date" placeholder="End Date">
+        <label className="editLabels" for="eventName">Event</label> &nbsp; <input id="eventName" class="swal2-input" placeholder="Event Name" autofocus><br/><br/>
+        <label className="editLabels" for="startDate">Start Date</label> &nbsp;<input id="startDate" class="swal2-input" type="date" placeholder="Start Date"><br/><br/>
+        <label className="editLabels" for="endDate">End Date</label> &nbsp;&nbsp;&nbsp;<input id="endDate" class="swal2-input" type="date" placeholder="End Date">
+    <br/><br/>
+    <label for="recurrence">Recurrence</label>
+    <select id="recurrence" class="swal2-select ${theme.palette.mode === 'light' ? 'light' : 'dark'}">
+        <option class="swal2-select ${theme.palette.mode === 'light' ? 'light' : 'dark'}" value="none">None</option>
+        <option class="swal2-select ${theme.palette.mode === 'light' ? 'light' : 'dark'}" value="weekly">Weekly</option>
+        <option class="swal2-select ${theme.palette.mode === 'light' ? 'light' : 'dark'}" value="biweekly">Biweekly</option>
+      </select>
   `,
         showCancelButton: true,
         confirmButtonColor: "#3A833A",
@@ -112,30 +173,47 @@ const Calendar = () => {
         showLoaderOnConfirm: true,
         background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
         color: theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
+
         preConfirm: async (input) => {
           const eventName = document.getElementById("eventName").value;
           const startDate = document.getElementById("startDate").value;
           const endDate = document.getElementById("endDate").value;
-
+          const recurrence = document.getElementById("recurrence").value;
+          const calendarApi = selected.view.calendar;
           if (!eventName || !startDate || !endDate) {
             Swal.showValidationMessage("Please fill in all fields");
             return;
           }
 
           try {
-            calendarApi.addEvent({
-              id: `${selected.dateStr}-${eventName}`,
-              title: eventName,
-              start: startDate,
-              end: endDate,
-              allDay: true,
-            });
+            if (recurrence === "none") {
+              
+              calendarApi.addEvent({
+                id: `${selected.dateStr}-${eventName}`,
+                title: eventName,
+                start: startDate,
+                end: endDate,
+                allDay: true,
+              });
 
-            await handleaddEventToCalendar({
-              title: eventName,
-              start: startDate,
-              end: endDate,
-            });
+              await handleaddEventToCalendar({
+                title: eventName,
+                start: startDate,
+                end: endDate,
+                rule: null,
+              });
+            } else {
+              await handleAddRecurringEvent(
+                eventName,
+                startDate,
+                endDate,
+                recurrence,
+                calendarApi
+              );
+            }
+
+            // Return the event details
+            return { eventName, startDate, endDate };
           } catch (error) {
             Swal.showValidationMessage(`Request failed: ${error}`);
           }
@@ -280,7 +358,7 @@ const Calendar = () => {
           Swal.showValidationMessage("Please fill in all fields");
           return;
         }
-        
+
         // Determine which properties have been updated
         const updatedProperties = {};
         if (eventName !== originalTitle) {
@@ -360,6 +438,12 @@ const Calendar = () => {
                   secondary={
                     <Typography>
                       {formatDate(event.start, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                      {" - "}
+                      {formatDate(event.end, {
                         year: "numeric",
                         month: "short",
                         day: "numeric",

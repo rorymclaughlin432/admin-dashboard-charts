@@ -8,6 +8,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
+  color-scheme: light dark;
 }
 
 .app {
@@ -32,4 +33,46 @@ body,
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.editLabels {
+  text-align: left !important;
+}
+
+.swal2-select {
+  background: light-dark(#efedea, black);
+}
+
+.div:where(.swal2-container) .swal2-select {
+  background: light-dark(#efedea, black);
+}
+
+.div:where(.swal2-container) .swal2-select.light {
+  background-color: #FFFFFF; /* Light background color */
+  color: #000000; /* Dark text color */
+}
+
+/* Dark mode */
+.div:where(.swal2-container) .swal2-select.dark {
+  background-color: #000000; /* Dark background color */
+  color: #FFFFFF; /* Light text color */
+}
+
+.swal2-select.light {
+  background-color: #FFFFFF; /* Light background color */
+  color: #000000; /* Dark text color */
+}
+
+/* Dark mode */
+.swal2-select.dark {
+  background-color: #000000; /* Dark background color */
+  color: #FFFFFF; /* Light text color */
+}
+
+.css-1whq41c {
+ border-bottom: 0 !important;
+}
+
+.css-18ms5cp {
+  border-bottom: 0 !important;
 }
