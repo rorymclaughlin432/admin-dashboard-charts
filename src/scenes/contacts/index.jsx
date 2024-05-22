@@ -3,51 +3,12 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { colorTokens } from "../../themes";
 import Header from "../../components/Header";
 import UserContactDetails from "../../data/UserContactDetails";
+import { contactColumns } from "../../data/DataColumns";
 
 const Contacts = () => {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
-  const columns = [
-    { field: "registrarId", headerName: "Registrar ID"},
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
-    },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
-    {
-      field: "phone",
-      headerName: "Phone Number",
-      flex: 1,
-    },
-    {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
-    {
-        field: "address",
-        headerName: "Address",
-        flex: 1,
-    },
-    {
-        field: "city",
-        headerName: "City",
-        flex: 1,
-    },
-    {
-        field: "zipCode",
-        headerName: "Zipcode",
-        flex: 1,
-    }
-  ];
+  const columns = contactColumns;
   return (
     <Box m="20px">
       <Header title="Contacts" subtitle={"List of Contacts"} />

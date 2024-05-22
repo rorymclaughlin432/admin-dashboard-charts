@@ -11,8 +11,8 @@ highchartsMap(Highcharts);
 const MapChart = () => {
         const mapOptions = {
     chart: {
-        map: 'Luxembourg',
-        height: "47%" 
+        map: 'Luxembourg', 
+        height: '165%'
       },
     title: { text: "Music Schools in Luxembourg" },
     mapNavigation: {
@@ -994,6 +994,7 @@ return (
       constructorType={"mapChart"}
       highcharts={Highcharts}
       options={mapOptions}
+      style={{ height: "100vh", width: "100%" }}
     /></div>
   );
 };

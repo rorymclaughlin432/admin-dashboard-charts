@@ -10,6 +10,7 @@ import LineChart from "../../components/LineChart";
 import MapChart from "../../components/MapChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
+import PieChart from "../../components/PieChart";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -179,39 +180,37 @@ const Dashboard = () => {
         </Box>
 
         {/* ROW 3 */}
+
         <Box gridColumn="span 4" backgroundColor={colors.primary[400]} p="30px">
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Composition Overview
           </Typography>
-          <Box mt="25px">
-            <Typography
-              variant="h5"
-              color={theme.palette.mode === "light" ? "#000000" : "#f6da54"}
-              sx={{ mt: "15px" }}
-            >
-              $48,352 revenue generated
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+          <br />
+          <Box style={{ display: "block",  height: "10%", }} height="400px">
+            <PieChart isDashboard={true} />
           </Box>
         </Box>
-        <Box gridColumn="span 4" backgroundColor={colors.primary[400]} p="30px">
+
+        <Box gridColumn="span 4"  backgroundColor={colors.primary[400]} p="30px">
           <Typography variant="h5" fontWeight="600">
             Demographic Overview
           </Typography>
           <br />
-          <Box height="400px">
+          <Box style={{ display: "block",  height: "10%", }} height="400px">
             <BarChart isDashboard={true} />
           </Box>
         </Box>
+
         <Box gridColumn="span 4" backgroundColor={colors.primary[400]} p="30px">
           <Typography variant="h5" fontWeight="600">
             Geographic Overview
           </Typography>
           <br />
-          <Box height="250px">
+          <Box style={{ display: "block",  height: "10%", }} height="400px">
             <MapChart isDashboard={true} />
           </Box>
         </Box>
+
       </Box>
     </Box>
   );

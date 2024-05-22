@@ -1,6 +1,6 @@
-import express from "express";
-import db from "../db/connection.js";
-import { v4 as uuidv4 } from 'uuid';
+const express = require("express");
+const db = require("../db/connection.js");
+const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 
 const registrarId = "REG" + Math.floor(Math.random() * 1000000);
@@ -170,4 +170,4 @@ router.delete("/:id", async (req, res) => {
   }
 }); */
 
-export default router;
+module.exports = router;
