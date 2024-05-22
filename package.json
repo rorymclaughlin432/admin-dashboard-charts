@@ -42,7 +42,7 @@
     "yup": "^1.4.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently \"npm run server\" \"react-scripts start\"",
     "server": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
