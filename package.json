@@ -43,10 +43,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "server": "npx nodemon server.js",
-    "client": "npm start --prefix client",
-    "build": "npm --prefix src/client react-scripts build",
-    "install-client": "npm install --prefix client"
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
