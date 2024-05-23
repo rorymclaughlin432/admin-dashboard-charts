@@ -23,7 +23,7 @@ const Calendar = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
       
-  const reactUrl = process.env.REACT_APP_API_URL;
+  //const reactUrl = process.env.REACT_APP_API_URL;
 
   const handleAddRecurringEvent = async (
     eventName,
@@ -82,7 +82,7 @@ const Calendar = () => {
   const handleaddEventToCalendar = async (values) => {
     try {
       const response = await axios.post(
-        `${reactUrl}submitcalendarEvent`,
+        `https://express-vercel-test-beta.vercel.app/submitcalendarEvent`,
         values
       );
       console.log(response.data);
@@ -104,7 +104,7 @@ const Calendar = () => {
       };
 
       const response = await axios.put(
-        `${reactUrl}updateCalendarEvent/${eventId}`,
+        `https://express-vercel-test-beta.vercel.app/updateCalendarEvent/${eventId}`,
         eventData
       );
 
@@ -121,7 +121,7 @@ const Calendar = () => {
       let eventId = selected.id;
 
       const response = await axios.delete(
-        `${reactUrl}deletecalendarEvent/${eventId}`
+        `https://express-vercel-test-beta.vercel.app/deletecalendarEvent/${eventId}`
       );
       console.log(response.data);
       setSuccessMessage("Event Deleted successfully!");

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 export default function UserContactDetails() {
   const [records, setRecords] = useState([]);
-  const reactUrl = process.env.REACT_APP_API_URL;
+  //const reactUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`${reactUrl}userContactInfo/`);
+      const response = await fetch(`https://express-vercel-test-beta.vercel.app/userContactInfo/`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         console.error(message);
@@ -16,7 +16,7 @@ export default function UserContactDetails() {
     }
     getRecords();
     return;
-  }, [records.length, reactUrl]);
+  }, [records.length]);
 
   return records;
 

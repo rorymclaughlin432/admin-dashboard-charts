@@ -14,12 +14,12 @@ const Form = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const reactUrl = process.env.REACT_APP_API_URL;
+  //const reactUrl = process.env.REACT_APP_API_URL;
 
   const handleFormSubmit = async (values) => {
     try {
       const response = await axios.post(
-        `${reactUrl}submitUserRecord`,
+        `https://express-vercel-test-beta.vercel.app/submitUserRecord`,
         values
       );
       console.log(response.data);
