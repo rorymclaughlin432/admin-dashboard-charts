@@ -25,3 +25,4 @@ yarn-error.log*
 .env
 server/.env
 client/node_modules/
+.vercel
