@@ -1,14 +1,19 @@
 const express = require("express");
 const db = require("../db/connection.js");
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 const router = express.Router();
 
 const registrarId = "REG" + Math.floor(Math.random() * 1000000);
 
 router.get("/usercollection", async (req, res) => {
-  let collection = db.collection("usercollection");
-  let results = await collection.find({}).toArray();
-  res.send(results).status(200);
+  try {
+    let collection = db.collection("usercollection");
+    let results = await collection.find({}).toArray();
+    res.send(results).status(200);
+  } catch (error) {
+    console.error("Error fetching user collection:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 router.get("/userContactInfo", async (req, res) => {
@@ -48,9 +53,9 @@ router.post("/submitUserRecord", async (req, res) => {
       address: req.body.address,
       city: req.body.city,
       zipCode: req.body.zipCode,
-      registrarId: registrarId
+      registrarId: registrarId,
     };
-    
+
     if (req.body.accessLevel === "admin") {
       usercollectionDetails.level = 1;
     } else if (req.body.accessLevel === "manager") {
@@ -61,7 +66,9 @@ router.post("/submitUserRecord", async (req, res) => {
 
     let usercollection = db.collection("usercollection");
     let userContactInfo = db.collection("userContactInfo");
-    let result = await userContactInfo.insertOne(userContactInfoDetails) + await usercollection.insertOne(usercollectionDetails);
+    let result =
+      (await userContactInfo.insertOne(userContactInfoDetails)) +
+      (await usercollection.insertOne(usercollectionDetails));
     res.send(result).status(204);
   } catch (err) {
     console.error(err);
@@ -77,7 +84,7 @@ router.post("/submitcalendarEvent", async (req, res) => {
       start: req.body.start,
       end: req.body.end,
       rule: req.body.rule,
-    }
+    };
     let calendarEvents = db.collection("calendarInfo");
     let result = await calendarEvents.insertOne(calendarEventDetails);
     res.send(result).status(204);
@@ -89,7 +96,7 @@ router.post("/submitcalendarEvent", async (req, res) => {
 
 router.put("/updateCalendarEvent/:id", async (req, res) => {
   try {
-    const query = { id: req.params.id }; 
+    const query = { id: req.params.id };
     const updates = {
       $set: {
         title: req.body.title,
@@ -107,10 +114,9 @@ router.put("/updateCalendarEvent/:id", async (req, res) => {
   }
 });
 
-
 router.delete("/deleteCalendarEvent/:id", async (req, res) => {
   try {
-    const query = { id: req.params.id }; 
+    const query = { id: req.params.id };
 
     const collection = db.collection("calendarInfo");
     let result = await collection.deleteOne(query);

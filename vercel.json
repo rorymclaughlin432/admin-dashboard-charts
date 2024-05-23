@@ -1,9 +1,16 @@
 {
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "functions": {
-    "api/*.js": {
-      "maxDuration": 30
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "client/build"
+      }
     }
-  }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "client/build/$1" }
+  ]
 }

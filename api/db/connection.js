@@ -1,15 +1,17 @@
+require('dotenv').config()
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
-const URI = process.env.DATABASE_URL;
+//const URI = process.env.DATABASE_URL;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.opgyf7a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-if (!URI) {
+if (!uri) {
   throw new Error("Please define the DATABASE_URL environment variable");
 }
 
-const client = new MongoClient(URI, {
+const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -29,6 +31,5 @@ const client = new MongoClient(URI, {
   }
 })();
 
-const db = client.db("admindashboard");
 
-module.exports = db;
+module.exports = client.db("admindashboard");
