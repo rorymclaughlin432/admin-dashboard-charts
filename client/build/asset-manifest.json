@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dbbf41a6.css",
+    "main.js": "/static/js/main.a2d5caaf.js",
+    "static/media/Rory.jpg": "/static/media/Rory.b9818b42e4cc78438834.jpg",
+    "static/media/amberadminname.png": "/static/media/amberadminname.653c18d9d869dbaac4a8.png",
+    "static/media/amberadmin-icon.png": "/static/media/amberadmin-icon.8b9a9fc36eeb6bda9384.png",
+    "index.html": "/index.html",
+    "main.dbbf41a6.css.map": "/static/css/main.dbbf41a6.css.map",
+    "main.a2d5caaf.js.map": "/static/js/main.a2d5caaf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbbf41a6.css",
+    "static/js/main.a2d5caaf.js"
+  ]
+}
