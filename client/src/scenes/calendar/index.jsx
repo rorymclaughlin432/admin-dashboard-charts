@@ -22,6 +22,8 @@ import CalendarEvents from "../../data/CalendarEvents";
 const Calendar = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+      
+  const reactUrl = process.env.REACT_APP_API_URL;
 
   const handleAddRecurringEvent = async (
     eventName,
@@ -80,7 +82,7 @@ const Calendar = () => {
   const handleaddEventToCalendar = async (values) => {
     try {
       const response = await axios.post(
-        "http://localhost:5050/submitcalendarEvent",
+        `${reactUrl}submitcalendarEvent`,
         values
       );
       console.log(response.data);
@@ -102,7 +104,7 @@ const Calendar = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:5050/updateCalendarEvent/${eventId}`,
+        `${reactUrl}updateCalendarEvent/${eventId}`,
         eventData
       );
 
@@ -119,7 +121,7 @@ const Calendar = () => {
       let eventId = selected.id;
 
       const response = await axios.delete(
-        `http://localhost:5050/deletecalendarEvent/${eventId}`
+        `${reactUrl}deletecalendarEvent/${eventId}`
       );
       console.log(response.data);
       setSuccessMessage("Event Deleted successfully!");

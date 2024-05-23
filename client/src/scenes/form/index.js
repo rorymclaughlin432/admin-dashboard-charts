@@ -14,10 +14,12 @@ const Form = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const reactUrl = process.env.REACT_APP_API_URL;
+
   const handleFormSubmit = async (values) => {
     try {
       const response = await axios.post(
-        "http://localhost:5050/submitUserRecord",
+        `${reactUrl}submitUserRecord`,
         values
       );
       console.log(response.data);

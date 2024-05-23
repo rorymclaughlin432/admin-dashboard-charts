@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 export default function CalendarEvents() {
   const [records, setRecords] = useState([]);
 
+  const reactUrl = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5050/calendarInfo/`);
+      const response = await fetch(`${reactUrl}calendarInfo/`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         console.error(message);
@@ -16,7 +18,7 @@ export default function CalendarEvents() {
     }
     getRecords();
     return;
-  }, [records.length]);
+  }, [records.length, reactUrl]);
 
   return records;
 }

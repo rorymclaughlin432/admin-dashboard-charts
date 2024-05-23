@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function UserList() {
   const [records, setRecords] = useState([]);
+  const reactUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5050/usercollection/`);
+      const response = await fetch(`${reactUrl}usercollection/`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         console.error(message);
@@ -16,7 +17,7 @@ export default function UserList() {
     }
     getRecords();
     return;
-  }, [records.length]);
+  }, [records.length, reactUrl]);
 
   return records;
 }
