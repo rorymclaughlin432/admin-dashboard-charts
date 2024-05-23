@@ -1,16 +1,1 @@
-{
-  "version": 2,
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "client/build"
-      }
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "client/build/$1" }
-  ]
-}
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
