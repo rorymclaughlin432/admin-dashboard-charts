@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const usercollection = require("./client/src/server/routes/usercollection.js");
+const usercollection = require("./routes/usercollection.js");
 
 const PORT = 5050;
 const app = express();
